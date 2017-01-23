@@ -7,7 +7,7 @@ import org.springframework.core.task.TaskExecutor;
  * description: 定时任务接口
  * time: 2017/1/22 16:42.
  */
-public interface TaskDO extends TaskExecutor {
+public interface TaskDO {
 
     void executor(Runnable runnable);
 

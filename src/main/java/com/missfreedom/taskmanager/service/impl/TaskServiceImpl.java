@@ -4,10 +4,12 @@ import com.missfreedom.taskmanager.model.TaskDO;
 import com.missfreedom.taskmanager.service.TaskService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.scheduling.TaskScheduler;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * author: JinBingBing
@@ -19,6 +21,8 @@ public class TaskServiceImpl implements TaskService {
 
     private static final Logger logger = LoggerFactory.getLogger(TaskServiceImpl.class);
 
+    @Resource
+    public TaskScheduler poolTaskScheduler;
 
     /**
      * 添加定时任务服务实现信息
@@ -29,6 +33,7 @@ public class TaskServiceImpl implements TaskService {
      */
     public boolean addTask(TaskDO taskDO) throws Exception {
         try {
+
             return true;
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
